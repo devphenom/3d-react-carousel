@@ -1,10 +1,12 @@
 import * as React from 'react'
-import styles from './styles.module.css'
+import Carousel3d from './Carousel3d'
+
+// import styles from './styles.module.css'
 
 interface Props {
-  text: string
+  children: React.ReactNode
 }
 
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export const Carousel = ({ children }: Props) => {
+  return <Carousel3d>{children}</Carousel3d>
 }
