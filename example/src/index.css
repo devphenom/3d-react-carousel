@@ -12,3 +12,95 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.container {
+  height: 50rem;
+  background-color: red;
+}
+
+img {
+  width: 100%;
+}
+
+/* add css module styles here (optional) */
+.carousel3d {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+
+.cSlide {
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* transform: translate(-50%, 0); */
+  height: 100%;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  transform-origin: center;
+  transition: transform 400ms ease;
+  transform: translate3d(0, 0, -200px);
+  opacity: 0;
+}
+
+/* Slider Functionality */
+
+/* Active */
+.cSlideActive {
+  transform: translate3d(0%, 0, 0px);
+  opacity: 1;
+}
+
+/* Next */
+.cSlideNext {
+  transform: translate3d(10%, 0%, -100px);
+  opacity: 0.7;
+}
+
+/* Next to Next */
+.cSlideNext2 {
+  transform: translate3d(30%, 0, -400px);
+  opacity: 0.5;
+}
+
+/* Prev */
+.cSlidePrev {
+  transform: translate3d(-10%, 0, -100px);
+  opacity: 0.7;
+}
+
+.cSlidePrev2 {
+  transform: translate3d(-30%, 0, -400px);
+  opacity: 0.5;
+}
+
+.right .cSlidePrev,
+.right .cSlidePrev2 {
+  transform: translate3d(0, 0, -200px);
+  opacity: 0;
+}
+
+.left .cSlideNext {
+  transform: translate3d(-10%, 0, -100px);
+  opacity: 0.7;
+}
+.left .cSlideNext2 {
+  transform: translate3d(-30%, 0, -400px);
+  opacity: 0.5;
+}
+.left .cSlidePrev,
+.left .cSlidePrev2 {
+  transform: translate3d(0, 0, -200px);
+  opacity: 0;
+}

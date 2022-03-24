@@ -1,36 +1,25 @@
 /* add css module styles here (optional) */
-
-/* .test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
-  text-align: center;
-} */
-
 .carousel3d {
   width: 100%;
-  height: 25rem;
+  height: 100%;
   margin: 0;
 }
 .slider {
   position: relative;
   width: 100%;
   height: 100%;
-  perspective: 1200px;
+  perspective: 1500px;
   transform-style: preserve-3d;
 }
 
-input[type='radio'] {
-  display: none;
-}
-
-.slider label,
 .cSlide {
   position: absolute;
-  height: 100%;
   left: 0;
   right: 0;
+  /* transform: translate(-50%, 0); */
+  height: 100%;
+  width: 60%;
+  margin: auto;
   display: flex;
   -moz-box-align: center;
   align-items: center;
@@ -38,73 +27,57 @@ input[type='radio'] {
   justify-content: center;
   transform-origin: center;
   transition: transform 400ms ease;
+  transform: translate3d(0, 0, -200px);
+  opacity: 0;
 }
 
 /* Slider Functionality */
 
-/* // 1 */
-#s1:checked ~ #slide1,
-#s2:checked ~ #slide2,
-#s3:checked ~ #slide3,
-#s4:checked ~ #slide4,
-#s5:checked ~ #slide5,
-#s6:checked ~ #slide6,
-#s7:checked ~ #slide7,
-#s8:checked ~ #slide8,
-#s9:checked ~ #slide9,
-#s10:checked ~ #slide10,
-#s11:checked ~ #slide11,
+/* Active */
 .cSlideActive {
-  transform: translate3d(-10%, 0, 0px);
+  transform: translate3d(0%, 0, 0px);
+  opacity: 1;
 }
 
-/* // 2 */
-#s1:checked ~ #slide2,
-#s2:checked ~ #slide3,
-#s3:checked ~ #slide4,
-#s4:checked ~ #slide5,
-#s5:checked ~ #slide6,
-#s6:checked ~ #slide7,
-#s7:checked ~ #slide8,
-#s8:checked ~ #slide9,
-#s9:checked ~ #slide10,
-#s10:checked ~ #slide11,
-#s11:checked ~ #slide1,
+/* Next */
 .cSlideNext {
-  transform: translate3d(10%, 0, -250px);
+  transform: translate3d(10%, 0%, -100px);
   opacity: 0.7;
 }
 
-/* // 3 */
-#s1:checked ~ #slide3,
-#s2:checked ~ #slide4,
-#s3:checked ~ #slide5,
-#s4:checked ~ #slide6,
-#s5:checked ~ #slide7,
-#s6:checked ~ #slide8,
-#s7:checked ~ #slide9,
-#s8:checked ~ #slide10,
-#s9:checked ~ #slide11,
-#s10:checked ~ #slide1,
-#s11:checked ~ #slide2,
+/* Next to Next */
 .cSlideNext2 {
-  transform: translate3d(45%, 0, -800px);
+  transform: translate3d(30%, 0, -400px);
   opacity: 0.5;
 }
 
-/* // 4 */
-#s1:checked ~ #slide11,
-#s2:checked ~ #slide1,
-#s3:checked ~ #slide2,
-#s4:checked ~ #slide3,
-#s5:checked ~ #slide4,
-#s6:checked ~ #slide5,
-#s7:checked ~ #slide6,
-#s8:checked ~ #slide7,
-#s9:checked ~ #slide8,
-#s10:checked ~ #slide9,
-#s11:checked ~ #slide10,
+/* Prev */
 .cSlidePrev {
+  transform: translate3d(-10%, 0, -100px);
+  opacity: 0.7;
+}
+
+.cSlidePrev2 {
+  transform: translate3d(-30%, 0, -400px);
+  opacity: 0.5;
+}
+
+.right .cSlidePrev,
+.right .cSlidePrev2 {
+  transform: translate3d(0, 0, -200px);
+  opacity: 0;
+}
+
+.left .cSlideNext {
+  transform: translate3d(-10%, 0, -100px);
+  opacity: 0.7;
+}
+.left .cSlideNext2 {
+  transform: translate3d(-30%, 0, -400px);
+  opacity: 0.5;
+}
+.left .cSlidePrev,
+.left .cSlidePrev2 {
   transform: translate3d(0, 0, -200px);
   opacity: 0;
 }
