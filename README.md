@@ -10,6 +10,12 @@
 npm install --save 3d-react-carousel
 ```
 
+or
+
+```bash
+yarn add 3d-react-carousel
+```
+
 ## Usage
 
 ```tsx
