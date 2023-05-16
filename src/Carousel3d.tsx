@@ -1,17 +1,19 @@
 import React, { Children, useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
 
+export type CarouselDirectionType =
+  | 'rtl'
+  | 'ltr'
+  | 'right'
+  | 'left'
+  | 'ttb'
+  | 'btt'
+  | 'top'
+  | 'bottom'
+
 type Carousel3dProps = {
   children: React.ReactNode
-  direction?:
-    | 'rtl'
-    | 'ltr'
-    | 'right'
-    | 'left'
-    | 'ttb'
-    | 'btt'
-    | 'top'
-    | 'bottom'
+  direction?: CarouselDirectionType
 }
 
 const Carousel = ({ children, direction = 'ltr' }: Carousel3dProps) => {
